@@ -1,0 +1,22 @@
+<!-- employee.component.html -->
+
+<form (submit)="login()">
+  <input type="text" placeholder="Username" [(ngModel)]="username">
+  <input type="password" placeholder="Password" [(ngModel)]="password">
+  <button type="submit">Login</button>
+</form>
+
+<div *ngFor="let employee of employees">
+  <input type="text" [(ngModel)]="employee.name">
+  <input type="number" [(ngModel)]="employee.salary">
+  <input type="number" [(ngModel)]="employee.deductions">
+  <button (click)="updateEmployee(employee)">Update</button>
+  <button (click)="deleteEmployee(employee._id)">Delete</button>
+</div>
+
+<form (submit)="addEmployee()">
+  <input type="text" placeholder="Name" [(ngModel)]="newEmployee.name">
+  <input type="number" placeholder="Salary" [(ngModel)]="newEmployee.salary">
+  <input type="number" placeholder="Deductions" [(ngModel)]="newEmployee.deductions">
+  <button type="submit">Add</button>
+</form>
